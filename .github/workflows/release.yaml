@@ -7,7 +7,7 @@ on:
         description: 'Image name'
         type: string
         required: false
-        default: duyhenryer/wolfi-image/${{ github.workflow }}
+        default: duyhenryer/wolfi-images/${{ github.workflow }}
       tag:
         description: 'Image tag'
         type: string
@@ -150,17 +150,17 @@ jobs:
             ghcr.io/${{ inputs.image }}@${{ steps.digest.outputs.digest-arm64 }}
 
       - if: inputs.scan == 'true'
+        name: Install Grype
+        run: |
+          curl -sSfL https://raw.githubusercontent.com/anchore/grype/main/install.sh | sh -s -- -b /usr/local/bin
+
+      - if: inputs.scan == 'true'
         name: Scan image
         id: scan
-        uses: anchore/scan-action@v6
-        with:
-          image: ghcr.io/${{ inputs.image }}:${{ inputs.tag }}
-          cache-db: true
-          fail-build: 'false'
-          severity-cutoff: 'high'
-          # Add a unique cache key to prevent conflicts
-          cache-key: "grype-db-${{ inputs.tag }}-${{ github.run_id }}"
-          grype-version: "v0.73.4"  # Set a specific version to ensure compatibility
+        run: |
+          mkdir -p ${{ github.workspace }}/scan-results
+          grype ghcr.io/${{ inputs.image }}:${{ inputs.tag }} -o sarif > ${{ github.workspace }}/scan-results/results.sarif
+          echo "sarif=${{ github.workspace }}/scan-results/results.sarif" >> $GITHUB_OUTPUT
 
       - if: inputs.scan == 'true'
         uses: github/codeql-action/upload-sarif@v3
