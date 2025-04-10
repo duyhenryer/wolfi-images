@@ -1,0 +1,14 @@
+include: images/shell/prod.yaml
+
+contents:
+  packages:
+    - apk-tools
+    - build-base
+    - git
+    - vim
+    - wget
+    - wolfi-keys
+    - socat
+    - nftables 
+accounts:
+  run-as: root
