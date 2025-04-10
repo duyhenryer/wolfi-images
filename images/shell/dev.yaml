@@ -9,6 +9,9 @@ contents:
     - wget
     - wolfi-keys
     - socat
-    - nftables 
+    - nftables
+    - ethtool
+    - ctop
+    - bind-tools
 accounts:
   run-as: root
