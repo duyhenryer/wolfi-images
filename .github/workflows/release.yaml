@@ -7,7 +7,7 @@ on:
         description: 'Image name'
         type: string
         required: false
-        default: duyhenryer/wolfi/${{ github.workflow }}
+        default: duyhenryer/wolfi-image/${{ github.workflow }}
       tag:
         description: 'Image tag'
         type: string
