@@ -1,3 +1,1 @@
-# wolfi-images
-
-Wolfi images collection
+# Wolfi images collection
