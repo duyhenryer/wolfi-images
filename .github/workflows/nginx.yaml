@@ -8,6 +8,7 @@ on:
       - 'main'
     paths:
       - 'images/nginx/*.yaml'
+      - ' .github/workflows/nginx.yaml'
   workflow_dispatch:
 
 permissions:
@@ -22,7 +23,7 @@ jobs:
   publish:
     strategy:
       matrix:
-        version: [latest, "1.27", "1.26"]
+        version: [latest, "1.27", "1.26", "1.25"]
         variant: [prod, shell, dev]
         include:
           - version: latest
@@ -31,6 +32,8 @@ jobs:
             packages: 'nginx~1.27,nginx-package-config~1.27,nginx-mod-stream~1.27'
           - version: "1.26"
             packages: 'nginx~1.26,nginx-package-config~1.26,nginx-mod-stream~1.26'
+          - version: "1.25"
+            packages: 'nginx~1.25,nginx-package-config~1.25,nginx-mod-stream~1.25'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
