@@ -8,7 +8,7 @@ on:
       - 'main'
     paths:
       - 'images/nginx/*.yaml'
-      - ' .github/workflows/nginx.yaml'
+      - '.github/workflows/nginx.yaml'
   workflow_dispatch:
 
 permissions:
