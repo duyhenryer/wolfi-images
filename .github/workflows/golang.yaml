@@ -23,11 +23,13 @@ jobs:
   publish:
     strategy:
       matrix:
-        version: [latest, "1.23", "1.22"]
+        version: [latest, "1.24", "1.23", "1.22"]
         variant: [prod, shell, dev]
         include:
           - version: latest
             packages: ''
+          - version: "1.24"
+            packages: 'go~1.24'
           - version: "1.23"
             packages: 'go~1.23'
           - version: "1.22"
