@@ -2,10 +2,14 @@ include: images/golang/prod.yaml
 
 contents:
   packages:
-    - git
-    - make
+    - bash
+
+entrypoint:
+  command: /bin/bash
+
+cmd: ""
 
 annotations:
-  org.opencontainers.image.title: 'golang-dev'
+  org.opencontainers.image.title: 'golang-shell'
   org.opencontainers.image.description: 'Golang image based on Wolfi OS'
   org.opencontainers.image.source: 'https://github.com/duyhenryer/wolfi-image/tree/main/images/golang'
