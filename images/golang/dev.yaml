@@ -1,0 +1,13 @@
+include: images/golang/shell.yaml
+
+contents:
+  packages:
+    - bash
+
+entrypoint:
+  command: /bin/bash
+
+annotations:
+  org.opencontainers.image.title: 'golang-shell'
+  org.opencontainers.image.description: 'Golang image based on Wolfi OS'
+  org.opencontainers.image.source: 'https://github.com/duyhenryer/wolfi-image/tree/main/images/golang'

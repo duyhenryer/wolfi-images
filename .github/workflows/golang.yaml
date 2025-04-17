@@ -1,0 +1,41 @@
+name: golang
+
+on:
+  schedule:
+    - cron: "00 01 * * 1-5"
+  push:
+    branches:
+      - 'main'
+    paths:
+      - .github/workflows/golang.yaml
+      - 'images/golang/*.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        version: [latest, "1.23", "1.22"]
+        variant: [prod, shell, dev]
+        include:
+          - version: latest
+            packages: ''
+          - version: "1.23"
+            packages: 'go~1.23'
+          - version: "1.22"
+            packages: 'go~1.22'
+    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
+      target: ${{ matrix.variant }}
+      packages: ${{ matrix.packages }}
+    secrets: inherit
