@@ -1,0 +1,47 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - ca-certificates-bundle
+    - glibc-locale-posix
+    - go
+    - wolfi-baselayout
+
+accounts:
+  groups:
+    - groupname: golang
+      gid: 65532
+  users:
+    - username: golang
+      uid: 65532
+      gid: 65532
+  run-as: golang
+
+paths:
+  - path: /go
+    type: directory
+    permissions: 0o755
+    uid: 65532
+    gid: 65532
+  - path: /go/src
+    type: directory
+    permissions: 0o755
+    uid: 65532
+    gid: 65532
+  - path: /go/bin
+    type: directory
+    permissions: 0o755
+    uid: 65532
+    gid: 65532
+
+work-dir: /go/src
+
+entrypoint:
+  command: /usr/bin/go
+
+cmd: version
+
+annotations:
+  org.opencontainers.image.title: 'golang'
+  org.opencontainers.image.description: 'Golang image based on Wolfi OS'
+  org.opencontainers.image.source: 'https://github.com/duyhenryer/wolfi-image/tree/main/images/golang'
