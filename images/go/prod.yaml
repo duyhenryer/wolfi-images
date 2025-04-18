@@ -9,13 +9,13 @@ contents:
 
 accounts:
   groups:
-    - groupname: golang
+    - groupname: go
       gid: 65532
   users:
-    - username: golang
+    - username: go
       uid: 65532
       gid: 65532
-  run-as: golang
+  run-as: go
 
 paths:
   - path: /go
@@ -42,6 +42,6 @@ entrypoint:
 cmd: version
 
 annotations:
-  org.opencontainers.image.title: 'golang'
-  org.opencontainers.image.description: 'Golang image based on Wolfi OS'
-  org.opencontainers.image.source: 'https://github.com/duyhenryer/wolfi-image/tree/main/images/golang'
+  org.opencontainers.image.title: 'go'
+  org.opencontainers.image.description: 'Go image based on Wolfi OS'
+  org.opencontainers.image.source: 'https://github.com/duyhenryer/wolfi-image/tree/main/images/go'
