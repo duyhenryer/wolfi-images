@@ -2,10 +2,10 @@ include: images/golang/prod.yaml
 
 contents:
   packages:
-    - bash
+    - busybox
 
 entrypoint:
-  command: /bin/bash
+  command: /bin/sh
 
 cmd: ""
 

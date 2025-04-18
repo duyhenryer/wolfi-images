@@ -5,6 +5,9 @@ contents:
     - git
     - make
 
+entrypoint:
+  command: /bin/sh
+
 cmd: ""
 
 annotations:
