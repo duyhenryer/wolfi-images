@@ -1,0 +1,15 @@
+include: images/go/prod.yaml
+
+contents:
+  packages:
+    - busybox
+
+entrypoint:
+  command: /bin/sh
+
+cmd: ""
+
+annotations:
+  org.opencontainers.image.title: 'go-shell'
+  org.opencontainers.image.description: 'Go image based on Wolfi OS'
+  org.opencontainers.image.source: 'https://github.com/duyhenryer/wolfi-image/tree/main/images/go'
