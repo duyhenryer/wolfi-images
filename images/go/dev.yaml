@@ -4,11 +4,9 @@ contents:
   packages:
     - git
     - make
-
-entrypoint:
-  command: /bin/sh
-
-cmd: ""
+    - apk-tools
+    - vim
+    - wolfi-keys
 
 annotations:
   org.opencontainers.image.title: 'go-dev'
