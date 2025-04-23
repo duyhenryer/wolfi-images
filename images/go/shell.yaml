@@ -3,10 +3,10 @@ include: images/go/prod.yaml
 contents:
   packages:
     - busybox
-    - busybox
     - curl
     - openssl
     - wget
+    - bash
 
 annotations:
   org.opencontainers.image.title: 'go-shell'

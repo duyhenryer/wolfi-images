@@ -8,6 +8,9 @@ contents:
     - vim
     - wolfi-keys
 
+accounts:
+  run-as: root
+  
 annotations:
   org.opencontainers.image.title: 'go-dev'
   org.opencontainers.image.description: 'Go image based on Wolfi OS'
