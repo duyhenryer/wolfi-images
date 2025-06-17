@@ -37,11 +37,11 @@ jobs:
           - version: latest
             packages: ''
           - version: "3.12"
-            packages: 'python~3.12,python-pip~3.12'
+            packages: 'python~3.12'
           - version: "3.11"
-            packages: 'python~3.11,python-pip~3.11'
+            packages: 'python~3.11'
           - version: "3.10"
-            packages: 'python~3.10,python-pip~3.10'
+            packages: 'python~3.10'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
