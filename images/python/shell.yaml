@@ -1,0 +1,23 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - ca-certificates-bundle
+    - glibc-locale-posix
+    - python
+    - python-pip
+    - apk-tools
+    - wolfi-baselayout
+    - bash
+    - curl
+    - wget
+    - openssl
+    - uv
+
+entrypoint:
+  command: /usr/bin/bash
+
+annotations:
+  org.opencontainers.image.title: 'python'
+  org.opencontainers.image.description: 'Python shell image based on Wolfi OS'
+  org.opencontainers.image.source: 'https://github.com/duyhenryer/wolfi-images/tree/main/images/python'

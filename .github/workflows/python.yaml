@@ -1,0 +1,51 @@
+name: python
+
+on:
+  schedule:
+    - cron: "00 01 * * 1-5"
+  pull_request:
+    paths:
+      - .github/workflows/python.yaml
+      - 'images/python/*.yaml'
+  push:
+    branches:
+      - 'main'
+    paths:
+      - .github/workflows/python.yaml
+      - 'images/python/*.yaml'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        version: [latest, "3.12", "3.11", "3.10"]
+        variant: [prod, shell, dev]
+        include:
+          - version: latest
+            packages: ''
+          - version: "3.12"
+            packages: 'python~3.12,python-pip~3.12'
+          - version: "3.11"
+            packages: 'python~3.11,python-pip~3.11'
+          - version: "3.10"
+            packages: 'python~3.10,python-pip~3.10'
+    name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
+      target: ${{ matrix.variant }}
+      packages: ${{ matrix.packages }}
+    secrets: inherit
