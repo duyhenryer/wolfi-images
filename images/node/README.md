@@ -1,4 +1,4 @@
-# Python
+# Node
 
 Node image based on Wolfi.
 
@@ -18,3 +18,15 @@ Node image based on Wolfi.
 | 20           | ghcr.io/duyhenryer/wolfi-images/node:20           |
 | 20-shell     | ghcr.io/duyhenryer/wolfi-images/node:20-shell     |
 | 20-dev       | ghcr.io/duyhenryer/wolfi-images/node:20-dev       |
+
+## ✅ Check version
+```sh
+❯ docker run --rm --entrypoint /usr/sbin/node ghcr.io/duyhenryer/wolfi-images/node:20 -v
+v20.19.1
+❯ docker run --rm --entrypoint /usr/sbin/node ghcr.io/duyhenryer/wolfi-images/node:22 -v
+v22.15.0
+❯ docker run --rm --entrypoint /usr/sbin/node ghcr.io/duyhenryer/wolfi-images/node:23 -v
+v23.11.0
+❯ docker run --rm --entrypoint /usr/sbin/node ghcr.io/duyhenryer/wolfi-images/node:latest -v
+v24.0.1
+```
