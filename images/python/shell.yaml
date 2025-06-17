@@ -1,21 +1,12 @@
-include: images/apko.yaml
+include: images/python/prod.yaml
 
 contents:
   packages:
-    - ca-certificates-bundle
-    - glibc-locale-posix
-    - python
-    - python-pip
-    - apk-tools
-    - wolfi-baselayout
     - bash
+    - busybox
     - curl
-    - wget
     - openssl
-    - uv
-
-entrypoint:
-  command: /usr/bin/bash
+    - wget
 
 annotations:
   org.opencontainers.image.title: 'python'
