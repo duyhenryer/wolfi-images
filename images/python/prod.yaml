@@ -1,0 +1,15 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - ca-certificates-bundle
+    - glibc-locale-posix
+    - wolfi-baselayout
+
+entrypoint:
+  command: /usr/bin/python
+
+annotations:
+  org.opencontainers.image.title: 'python'
+  org.opencontainers.image.description: 'Python image based on Wolfi OS'
+  org.opencontainers.image.source: 'https://github.com/duyhenryer/wolfi-images/tree/main/images/python'

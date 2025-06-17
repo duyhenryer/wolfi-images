@@ -1,0 +1,6 @@
+include: images/python/dev.yaml
+
+contents:
+  packages:
+    - python-3.12
+    - python-3.12-dev

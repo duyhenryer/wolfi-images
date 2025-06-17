@@ -1,0 +1,14 @@
+include: images/python/prod.yaml
+
+contents:
+  packages:
+    - bash
+    - busybox
+    - curl
+    - openssl
+    - wget
+
+annotations:
+  org.opencontainers.image.title: 'python'
+  org.opencontainers.image.description: 'Python shell image based on Wolfi OS'
+  org.opencontainers.image.source: 'https://github.com/duyhenryer/wolfi-images/tree/main/images/python'
