@@ -42,4 +42,5 @@ jobs:
       tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
       target: ${{ matrix.variant }}
       packages: ${{ matrix.packages }}
+      config-dir: images/python/${{ matrix.version }}
     secrets: inherit
