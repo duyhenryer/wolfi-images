@@ -33,14 +33,14 @@ jobs:
       matrix:
         version: ["3.12"]
         variant: [prod, shell, dev]
-        include:
-          - version: "3.12"
-            packages: 'python-3.12'
+        # include:
+        #   - version: "3.12"
+        #     packages: 'python-3.12'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
       tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
       target: ${{ matrix.variant }}
-      packages: ${{ matrix.packages }}
+      # packages: ${{ matrix.packages }}
       config-dir: images/python/${{ matrix.version }}
     secrets: inherit
