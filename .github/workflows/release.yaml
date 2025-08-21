@@ -58,7 +58,7 @@ jobs:
       - uses: imjasonh/setup-crane@v0.4
       - uses: sigstore/cosign-installer@v3
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Set Vars
         id: vars
