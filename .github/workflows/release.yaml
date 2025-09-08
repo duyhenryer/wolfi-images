@@ -87,7 +87,7 @@ jobs:
 
       - name: Publish image
         id: apko
-        uses: distroless/actions/apko-publish@v1.0.0
+        uses: distroless/actions/apko-publish@v1.0.1
         with:
           config: ${{ inputs.config-dir }}/${{ inputs.target }}.yaml
           tag: ${{ steps.vars.outputs.image }}
@@ -157,7 +157,7 @@ jobs:
 
       - if: steps.vars.outputs.registry == 'ghcr.io'
         name: Attest build provenance
-        uses: actions/attest-build-provenance@v2
+        uses: actions/attest-build-provenance@v3
         with:
           subject-name: ${{ steps.vars.outputs.registry }}/${{ inputs.repository }}
           subject-digest: ${{ steps.digest.outputs.digest }}
