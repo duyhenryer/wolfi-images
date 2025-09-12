@@ -1,16 +1,43 @@
-# Go
+# Go Image
 
-| 📌 Version    | ⬇️ Pull URL                                   |
-| ------------ | -------------------------------------------- |
-| latest       | ghcr.io/duyhenryer/wolfi-image/go:latest       |
-| latest-dev   | ghcr.io/duyhenryer/wolfi-image/go:latest-dev   |
-| latest-shell | ghcr.io/duyhenryer/wolfi-image/go:latest-shell |
-| 1.24         | ghcr.io/duyhenryer/wolfi-image/go:1.24         |
-| 1.24-dev     | ghcr.io/duyhenryer/wolfi-image/go:1.24-dev     |
-| 1.24-shell   | ghcr.io/duyhenryer/wolfi-image/go:1.24-shell   |
-| 1.23         | ghcr.io/duyhenryer/wolfi-image/go:1.23         |
-| 1.23-dev     | ghcr.io/duyhenryer/wolfi-image/go:1.23-dev     |
-| 1.23-shell   | ghcr.io/duyhenryer/wolfi-image/go:1.23-shell   |
-| 1.22         | ghcr.io/duyhenryer/wolfi-image/go:1.22         |
-| 1.22-dev     | ghcr.io/duyhenryer/wolfi-image/go:1.22-dev     |
-| 1.22-shell   | ghcr.io/duyhenryer/wolfi-image/go:1.22-shell   |
+> Fast and efficient Go runtime built on Wolfi OS with zero known CVEs
+
+## 🏷️ Available Tags
+
+| ⬇️ Pull URL                                           | 📌 Version    |
+| ----------------------------------------------------- | ------------ |
+| ghcr.io/duyhenryer/wolfi-images/go:latest            | latest       |
+| ghcr.io/duyhenryer/wolfi-images/go:latest-dev        | latest-dev   |
+| ghcr.io/duyhenryer/wolfi-images/go:latest-shell      | latest-shell |
+| ghcr.io/duyhenryer/wolfi-images/go:1.24              | 1.24         |
+| ghcr.io/duyhenryer/wolfi-images/go:1.24-dev          | 1.24-dev     |
+| ghcr.io/duyhenryer/wolfi-images/go:1.24-shell        | 1.24-shell   |
+| ghcr.io/duyhenryer/wolfi-images/go:1.23              | 1.23         |
+| ghcr.io/duyhenryer/wolfi-images/go:1.23-dev          | 1.23-dev     |
+| ghcr.io/duyhenryer/wolfi-images/go:1.23-shell        | 1.23-shell   |
+| ghcr.io/duyhenryer/wolfi-images/go:1.22              | 1.22         |
+| ghcr.io/duyhenryer/wolfi-images/go:1.22-dev          | 1.22-dev     |
+| ghcr.io/duyhenryer/wolfi-images/go:1.22-shell        | 1.22-shell   |
+
+## 📦 Variants
+
+| Variant | Description | Use Case |
+|---------|-------------|----------|
+| `prod` | Production-ready with minimal packages | Runtime, production deployments |
+| `dev` | Development tools included | Building, testing, debugging |
+| `shell` | Interactive shell with utilities | Development, troubleshooting |
+
+## 📊 Image Info
+
+```bash
+# Check Go version
+docker run --rm ghcr.io/duyhenryer/wolfi-images/go:latest go version
+
+# Build Go application
+docker run --rm -v $(pwd):/app -w /app \
+  ghcr.io/duyhenryer/wolfi-images/go:latest-dev go build -o app main.go
+
+# Run Go application
+docker run --rm -v $(pwd):/app -w /app \
+  ghcr.io/duyhenryer/wolfi-images/go:latest ./app
+```

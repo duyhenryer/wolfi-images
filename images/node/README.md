@@ -1,32 +1,43 @@
-# Node
+# Node.js Image
 
-Node image based on Wolfi.
+> Modern JavaScript runtime built on Wolfi OS with zero known CVEs
 
-## Versions
+## 🏷️ Available Tags
 
-| 📌 Version    | ⬇️ Pull URL                               |
-| ------------ | ------------------------------------------- |
-| latest       | ghcr.io/duyhenryer/wolfi-images/node:latest       |
-| latest-shell | ghcr.io/duyhenryer/wolfi-images/node:latest-shell |
-| latest-dev   | ghcr.io/duyhenryer/wolfi-images/node:latest-dev   |
-| 23           | ghcr.io/duyhenryer/wolfi-images/node:23           |
-| 23-shell     | ghcr.io/duyhenryer/wolfi-images/node:23-shell     |
-| 23-dev       | ghcr.io/duyhenryer/wolfi-images/node:23-dev       |
-| 22           | ghcr.io/duyhenryer/wolfi-images/node:22           |
-| 22-shell     | ghcr.io/duyhenryer/wolfi-images/node:22-shell     |
-| 22-dev       | ghcr.io/duyhenryer/wolfi-images/node:22-dev       |
-| 20           | ghcr.io/duyhenryer/wolfi-images/node:20           |
-| 20-shell     | ghcr.io/duyhenryer/wolfi-images/node:20-shell     |
-| 20-dev       | ghcr.io/duyhenryer/wolfi-images/node:20-dev       |
+| ⬇️ Pull URL                                           | 📌 Version    |
+| ----------------------------------------------------- | ------------ |
+| ghcr.io/duyhenryer/wolfi-images/node:latest          | latest       |
+| ghcr.io/duyhenryer/wolfi-images/node:latest-shell    | latest-shell |
+| ghcr.io/duyhenryer/wolfi-images/node:latest-dev      | latest-dev   |
+| ghcr.io/duyhenryer/wolfi-images/node:23              | 23           |
+| ghcr.io/duyhenryer/wolfi-images/node:23-shell        | 23-shell     |
+| ghcr.io/duyhenryer/wolfi-images/node:23-dev          | 23-dev       |
+| ghcr.io/duyhenryer/wolfi-images/node:22              | 22           |
+| ghcr.io/duyhenryer/wolfi-images/node:22-shell        | 22-shell     |
+| ghcr.io/duyhenryer/wolfi-images/node:22-dev          | 22-dev       |
+| ghcr.io/duyhenryer/wolfi-images/node:20              | 20           |
+| ghcr.io/duyhenryer/wolfi-images/node:20-shell        | 20-shell     |
+| ghcr.io/duyhenryer/wolfi-images/node:20-dev          | 20-dev       |
 
-## ✅ Check version
-```sh
-❯ docker run --rm --entrypoint /usr/sbin/node ghcr.io/duyhenryer/wolfi-images/node:20 -v
-v20.19.1
-❯ docker run --rm --entrypoint /usr/sbin/node ghcr.io/duyhenryer/wolfi-images/node:22 -v
-v22.15.0
-❯ docker run --rm --entrypoint /usr/sbin/node ghcr.io/duyhenryer/wolfi-images/node:23 -v
-v23.11.0
-❯ docker run --rm --entrypoint /usr/sbin/node ghcr.io/duyhenryer/wolfi-images/node:latest -v
-v24.0.1
+## 📦 Variants
+
+| Variant | Description | Use Case |
+|---------|-------------|----------|
+| `prod` | Production-ready with minimal packages | Runtime, production deployments |
+| `dev` | Development tools included | Building, testing, npm install |
+| `shell` | Interactive shell with utilities | Development, troubleshooting |
+
+## 📊 Image Info
+
+```bash
+# Check Node.js version
+docker run --rm ghcr.io/duyhenryer/wolfi-images/node:latest node --version
+
+# Run Node.js application
+docker run --rm -v $(pwd):/app -w /app \
+  ghcr.io/duyhenryer/wolfi-images/node:22 node index.js
+
+# Install dependencies and build
+docker run --rm -v $(pwd):/app -w /app \
+  ghcr.io/duyhenryer/wolfi-images/node:22-dev npm install && npm run build
 ```

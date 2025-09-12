@@ -8,11 +8,11 @@
 
 | 🏷️ Image Name | 📦 Pull Command |
 |---------------|----------------|
-| [🐍 **python**](./images/python/) | `docker pull ghcr.io/duyhenryer/wolfi-images/python` |
-| [🟢 **node**](./images/node/) | `docker pull ghcr.io/duyhenryer/wolfi-images/node` |
-| [🐹 **go**](./images/go/) | `docker pull ghcr.io/duyhenryer/wolfi-images/go` |
-| [⚡ **nginx**](./images/nginx/) | `docker pull ghcr.io/duyhenryer/wolfi-images/nginx` |
-| [🐚 **shell**](./images/shell/) | `docker pull ghcr.io/duyhenryer/wolfi-images/shell` |
+| [**python**](./images/python/) | `docker pull ghcr.io/duyhenryer/wolfi-images/python` |
+| [**node**](./images/node/) | `docker pull ghcr.io/duyhenryer/wolfi-images/node` |
+| [**go**](./images/go/) | `docker pull ghcr.io/duyhenryer/wolfi-images/go` |
+| [**nginx**](./images/nginx/) | `docker pull ghcr.io/duyhenryer/wolfi-images/nginx` |
+| [**shell**](./images/shell/) | `docker pull ghcr.io/duyhenryer/wolfi-images/shell` |
 
 ## ✨ Features
 
