@@ -1,4 +1,4 @@
-include: images/python/apko.yaml
+include: images/apko.yaml
 
 contents:
   packages:
