@@ -31,17 +31,17 @@ jobs:
   publish:
     strategy:
       matrix:
-        version: [latest, "1.27", "1.26", "1.25"]
+        version: [latest, "1.28", "1.27", "1.26"]
         variant: [prod, shell, dev]
         include:
           - version: latest
             packages: ''
+          - version: "1.28"
+            packages: 'nginx~1.28,nginx-package-config~1.28,nginx-mod-stream~1.28'
           - version: "1.27"
             packages: 'nginx~1.27,nginx-package-config~1.27,nginx-mod-stream~1.27'
           - version: "1.26"
             packages: 'nginx~1.26,nginx-package-config~1.26,nginx-mod-stream~1.26'
-          - version: "1.25"
-            packages: 'nginx~1.25,nginx-package-config~1.25,nginx-mod-stream~1.25'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
