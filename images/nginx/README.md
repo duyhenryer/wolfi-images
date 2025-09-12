@@ -8,6 +8,9 @@ Minimal Wolfi-based nginx HTTP, reverse proxy, mail proxy, and a generic TCP/UDP
 | latest       | ghcr.io/duyhenryer/wolfi-images/nginx:latest       |
 | latest-dev   | ghcr.io/duyhenryer/wolfi-images/nginx:latest-dev   |
 | latest-shell | ghcr.io/duyhenryer/wolfi-images/nginx:latest-shell |
+| 1.29         | ghcr.io/duyhenryer/wolfi-images/nginx:1.29         |
+| 1.29-dev     | ghcr.io/duyhenryer/wolfi-images/nginx:1.29-dev     |
+| 1.29-shell   | ghcr.io/duyhenryer/wolfi-images/nginx:1.29-shell   |
 | 1.28         | ghcr.io/duyhenryer/wolfi-images/nginx:1.28         |
 | 1.28-dev     | ghcr.io/duyhenryer/wolfi-images/nginx:1.28-dev     |
 | 1.28-shell   | ghcr.io/duyhenryer/wolfi-images/nginx:1.28-shell   |
@@ -26,13 +29,10 @@ nginx version: nginx/1.26.3
 nginx version: nginx/1.27.5
 ❯ docker run --rm --entrypoint /usr/sbin/nginx ghcr.io/duyhenryer/wolfi-images/nginx:1.28 -v
 nginx version: nginx/1.28.0
-❯ docker run --rm --entrypoint /usr/sbin/nginx ghcr.io/duyhenryer/wolfi-images/nginx:1.27-shell -v
-Unable to find image 'ghcr.io/duyhenryer/wolfi-images/nginx:1.27-shell' locally
-1.27-shell: Pulling from duyhenryer/wolfi-images/nginx
-5b8fa02f5d6e: Pull complete
-Digest: sha256:21a945e39f25398ab31b8bd13830f037c46aaff0472d62a22719e48ce68ea496
-Status: Downloaded newer image for ghcr.io/duyhenryer/wolfi-images/nginx:1.27-shell
-nginx version: nginx/1.27.5
+❯ docker run --rm --entrypoint /usr/sbin/nginx ghcr.io/duyhenryer/wolfi-images/nginx:1.29 -v
+nginx version: nginx/1.29.1
+❯ docker run --rm --entrypoint /usr/sbin/nginx ghcr.io/duyhenryer/wolfi-images/nginx:1.29-shell -v
+nginx version: nginx/1.29.1
 ```
 
 ## ✅ Verify the Provenance
