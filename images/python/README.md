@@ -1,36 +1,41 @@
 # Python Image
 
-## Available Tags
-| 📌 Version    | ⬇️ Pull URL                               |
-| ------------ | ------------------------------------------- |
-| latest       | ghcr.io/duyhenryer/wolfi-images/python:latest       |
-| latest-shell | ghcr.io/duyhenryer/wolfi-images/python:latest-shell |
-| latest-dev   | ghcr.io/duyhenryer/wolfi-images/python:latest-dev   |
-| 3.12           | ghcr.io/duyhenryer/wolfi-images/python:3.12           |
-| 3.12-shell     | ghcr.io/duyhenryer/wolfi-images/python:3.12-shell     |
-| 3.12-dev       | ghcr.io/duyhenryer/wolfi-images/python:3.12-dev       |
-| 3.11           | ghcr.io/duyhenryer/wolfi-images/python:3.11           |
-| 3.11-shell     | ghcr.io/duyhenryer/wolfi-images/python:3.11-shell     |
-| 3.11-dev       | ghcr.io/duyhenryer/wolfi-images/python:3.11-dev       |
-| 3.10           | ghcr.io/duyhenryer/wolfi-images/python:3.10           |
-| 3.10-shell     | ghcr.io/duyhenryer/wolfi-images/python:3.10-shell     |
-| 3.10-dev       | ghcr.io/duyhenryer/wolfi-images/python:3.10-dev       |
+> Minimal, secure Python runtime built on Wolfi OS with zero known CVEs
 
-## Variants
+## 🏷️ Available Tags
+| ⬇️ Pull URL                                           | 📌 Version    |
+| ----------------------------------------------------- | ------------ |
+| ghcr.io/duyhenryer/wolfi-images/python:latest         | latest       |
+| ghcr.io/duyhenryer/wolfi-images/python:latest-shell   | latest-shell |
+| ghcr.io/duyhenryer/wolfi-images/python:latest-dev     | latest-dev   |
+| ghcr.io/duyhenryer/wolfi-images/python:3.12           | 3.12           |
+| ghcr.io/duyhenryer/wolfi-images/python:3.12-shell     | 3.12-shell     |
+| ghcr.io/duyhenryer/wolfi-images/python:3.12-dev       | 3.12-dev       |
+| ghcr.io/duyhenryer/wolfi-images/python:3.11           | 3.11           |
+| ghcr.io/duyhenryer/wolfi-images/python:3.11-shell     | 3.11-shell     |
+| ghcr.io/duyhenryer/wolfi-images/python:3.11-dev       | 3.11-dev       |
+| ghcr.io/duyhenryer/wolfi-images/python:3.10           | 3.10           |
+| ghcr.io/duyhenryer/wolfi-images/python:3.10-shell     | 3.10-shell     |
+| ghcr.io/duyhenryer/wolfi-images/python:3.10-dev       | 3.10-dev       |
 
-- `prod`: Production image with minimal packages
-- `dev`: Development image with additional tools
-- `shell`: Shell image with bash and basic tools
+## 📦 Variants
 
-## Usage
+| Variant | Description | Use Case |
+|---------|-------------|----------|
+| `prod` | Production-ready with minimal packages | Runtime, production deployments |
+| `dev` | Development tools included | Development, debugging, building |
+| `shell` | Interactive shell with utilities | Debugging, troubleshooting |
+
+
+## 📊 Image Info
 
 ```bash
-# Pull the image
-docker pull ghcr.io/duyhenryer/wolfi-images/python:latest
+# Check Python version
+docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12 python --version
 
-# Run Python
-docker run --rm ghcr.io/duyhenryer/wolfi-images/python:latest python --version
+# Check installed packages
+docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12-dev python -m pip list
 
-# Run with shell
-docker run --rm -it ghcr.io/duyhenryer/wolfi-images/python:latest-shell
+# Image size
+docker images ghcr.io/duyhenryer/wolfi-images/python:3.12
 ```
