@@ -1,18 +1,18 @@
-name: nginx
+name: python
 
 on:
   schedule:
     - cron: "00 01 * * 1-5"
   pull_request:
     paths:
-      - .github/workflows/nginx.yaml
-      - 'images/nginx/*.yaml'
+      - .github/workflows/python.yaml
+      - 'images/python/*.yaml'
   push:
     branches:
       - 'main'
     paths:
-      - .github/workflows/nginx.yaml
-      - 'images/nginx/*.yaml'
+      - .github/workflows/python.yaml
+      - 'images/python/*.yaml'
   workflow_dispatch:
 
 concurrency:
@@ -31,23 +31,16 @@ jobs:
   publish:
     strategy:
       matrix:
-        version: [latest, "1.29", "1.28", "1.27", "1.26"]
+        version: ["3.12"]
         variant: [prod, shell, dev]
-        include:
-          - version: latest
-            packages: ''
-          - version: "1.29"
-            packages: 'nginx~1.29,nginx-package-config~1.29,nginx-mod-stream~1.29'
-          - version: "1.28"
-            packages: 'nginx~1.28,nginx-package-config~1.28,nginx-mod-stream~1.28'
-          - version: "1.27"
-            packages: 'nginx~1.27,nginx-package-config~1.27,nginx-mod-stream~1.27'
-          - version: "1.26"
-            packages: 'nginx~1.26,nginx-package-config~1.26,nginx-mod-stream~1.26'
+        # include:
+        #   - version: "3.12"
+        #     packages: 'python-3.12'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
       tag: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
       target: ${{ matrix.variant }}
-      packages: ${{ matrix.packages }}
+      # packages: ${{ matrix.packages }}
+      config-dir: images/python/${{ matrix.version }}
     secrets: inherit

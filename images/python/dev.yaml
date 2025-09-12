@@ -1,0 +1,19 @@
+include: images/python/shell.yaml
+
+contents:
+  packages:
+    - apk-tools
+    - build-base
+    - git
+    - ruff
+    - uv
+    - vim
+    - wolfi-keys
+
+accounts:
+  run-as: root
+
+annotations:
+  org.opencontainers.image.title: 'python'
+  org.opencontainers.image.description: 'Python development image based on Wolfi OS'
+  org.opencontainers.image.source: 'https://github.com/duyhenryer/wolfi-images/tree/main/images/python'
