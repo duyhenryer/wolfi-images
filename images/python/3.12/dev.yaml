@@ -4,3 +4,4 @@ contents:
   packages:
     - python-3.12
     - python-3.12-dev
+    - py3.12-pip

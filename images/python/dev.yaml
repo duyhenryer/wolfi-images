@@ -2,13 +2,13 @@ include: images/python/shell.yaml
 
 contents:
   packages:
-    - ca-certificates-bundle
-    - glibc-locale-posix
-    - python-pip
-    - wolfi-baselayout
+    - apk-tools
+    - build-base
     - git
-    - curl
-    - wget
+    - ruff
+    - uv
+    - vim
+    - wolfi-keys
 
 accounts:
   run-as: root
