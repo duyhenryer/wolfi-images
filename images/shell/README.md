@@ -31,16 +31,22 @@
 docker manifest inspect ghcr.io/duyhenryer/wolfi-images/shell:latest
 
 # Once available, run interactive shell
-docker run --rm -it ghcr.io/duyhenryer/wolfi-images/shell:latest
-
-# Run shell script
-docker run --rm -v $(pwd):/scripts -w /scripts \
-  ghcr.io/duyhenryer/wolfi-images/shell:latest bash script.sh
+docker run --rm -it ghcr.io/duyhenryer/wolfi-images/shell:latest bash
 ```
 
 ## 🔐 Image Verification
+✅ ***Verify the Provenance***
 
-All images are signed with Sigstore. Once images are published, verify authenticity:
+GitHub CLI (`gh`) can be used to retrieve the build provenance, which details the exact commit, workflow, and runner that produced the image:
+```sh
+gh attestation verify \
+  --owner duyhenryer \
+  oci://ghcr.io/duyhenryer/wolfi-images/shell:latest-shell
+```
+
+✅ ***Verify the Image Signature***
+
+All images are signed with `Sigstore`. Once images are published, verify authenticity:
 
 ```bash
 # Verify image signature (after successful build)

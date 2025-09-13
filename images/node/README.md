@@ -33,12 +33,8 @@
 # Check if image is available
 docker manifest inspect ghcr.io/duyhenryer/wolfi-images/node:latest
 
-# Once available, check Node.js version
-docker run --rm ghcr.io/duyhenryer/wolfi-images/node:latest node --version
-
-# Run Node.js application
-docker run --rm -v $(pwd):/app -w /app \
-  ghcr.io/duyhenryer/wolfi-images/node:22 node index.js
+# Check Node.js version
+docker run --rm ghcr.io/duyhenryer/wolfi-images/node:latest --version
 ```
 
 ## 🔐 Image Verification
