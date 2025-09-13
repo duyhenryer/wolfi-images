@@ -27,14 +27,24 @@
 ## 📊 Image Info
 
 ```bash
-# Interactive shell
+# Check if image is available
+docker manifest inspect ghcr.io/duyhenryer/wolfi-images/shell:latest
+
+# Once available, run interactive shell
 docker run --rm -it ghcr.io/duyhenryer/wolfi-images/shell:latest
 
 # Run shell script
 docker run --rm -v $(pwd):/scripts -w /scripts \
   ghcr.io/duyhenryer/wolfi-images/shell:latest bash script.sh
+```
 
-# Use as debugging sidecar
-docker run --rm -it --network container:myapp \
-  ghcr.io/duyhenryer/wolfi-images/shell:latest
+## 🔐 Image Verification
+
+All images are signed with Sigstore. Once images are published, verify authenticity:
+
+```bash
+# Verify image signature (after successful build)
+cosign verify ghcr.io/duyhenryer/wolfi-images/shell:latest \
+  --certificate-identity-regexp="https://github.com/duyhenryer/wolfi-images" \
+  --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
 ```

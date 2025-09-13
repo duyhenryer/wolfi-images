@@ -30,14 +30,24 @@
 ## 📊 Image Info
 
 ```bash
-# Check Go version
+# Check if image is available
+docker manifest inspect ghcr.io/duyhenryer/wolfi-images/go:latest
+
+# Once available, check Go version
 docker run --rm ghcr.io/duyhenryer/wolfi-images/go:latest go version
 
-# Build Go application
+# Build and run Go application
 docker run --rm -v $(pwd):/app -w /app \
-  ghcr.io/duyhenryer/wolfi-images/go:latest-dev go build -o app main.go
+  ghcr.io/duyhenryer/wolfi-images/go:latest-dev go run main.go
+```
 
-# Run Go application
-docker run --rm -v $(pwd):/app -w /app \
-  ghcr.io/duyhenryer/wolfi-images/go:latest ./app
+## 🔐 Image Verification
+
+All images are signed with Sigstore. Once images are published, verify authenticity:
+
+```bash
+# Verify image signature (after successful build)
+cosign verify ghcr.io/duyhenryer/wolfi-images/go:latest \
+  --certificate-identity-regexp="https://github.com/duyhenryer/wolfi-images" \
+  --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
 ```
