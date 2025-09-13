@@ -31,11 +31,8 @@ jobs:
   publish:
     strategy:
       matrix:
-        version: ["3.12"]
+        version: ["3.13", "3.12"]
         variant: [prod, shell, dev]
-        # include:
-        #   - version: "3.12"
-        #     packages: 'python-3.12'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
