@@ -37,10 +37,7 @@
 docker manifest inspect ghcr.io/duyhenryer/wolfi-images/nginx:1.29
 
 # Once available, check nginx version
-docker run --rm --entrypoint /usr/sbin/nginx ghcr.io/duyhenryer/wolfi-images/nginx:1.29 -v
-
-# Run nginx server
-docker run -d -p 8080:80 ghcr.io/duyhenryer/wolfi-images/nginx:1.29
+docker run --rm --entrypoint /usr/sbin/nginx ghcr.io/duyhenryer/wolfi-images/nginx:1.29 -version
 ```
 
 ## 🔐 Image Verification

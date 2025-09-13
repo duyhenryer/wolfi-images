@@ -24,12 +24,15 @@
 ## 🎯 Quick Start
 
 ```bash
-# Python example
-docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12 python --version
+# Python version
+docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12 --version
 
-# Node.js example  
-docker run --rm ghcr.io/duyhenryer/wolfi-images/node:latest node --version
+# Node version  
+docker run --rm ghcr.io/duyhenryer/wolfi-images/node:latest --version
 
-# Nginx example
-docker run -p 8080:80 ghcr.io/duyhenryer/wolfi-images/nginx:latest
+# Nginx version
+docker run ghcr.io/duyhenryer/wolfi-images/nginx:latest -version
+
+# Go version
+docker run ghcr.io/duyhenryer/wolfi-images/go:latest version
 ```

@@ -30,14 +30,11 @@
 ## 📊 Image Info
 
 ```bash
-# Check if image is available
-docker manifest inspect ghcr.io/duyhenryer/wolfi-images/python:3.12
+# Check Python version
+docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12 --version
 
-# Once available, check Python version
-docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12 python --version
-
-# Check installed packages
-docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12-dev python -m pip list
+# Check installed packages (dev variant)
+docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12-dev -m pip list
 ```
 
 ## 🔐 Image Verification
