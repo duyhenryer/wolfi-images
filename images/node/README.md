@@ -30,14 +30,24 @@
 ## 📊 Image Info
 
 ```bash
-# Check Node.js version
+# Check if image is available
+docker manifest inspect ghcr.io/duyhenryer/wolfi-images/node:latest
+
+# Once available, check Node.js version
 docker run --rm ghcr.io/duyhenryer/wolfi-images/node:latest node --version
 
 # Run Node.js application
 docker run --rm -v $(pwd):/app -w /app \
   ghcr.io/duyhenryer/wolfi-images/node:22 node index.js
+```
 
-# Install dependencies and build
-docker run --rm -v $(pwd):/app -w /app \
-  ghcr.io/duyhenryer/wolfi-images/node:22-dev npm install && npm run build
+## 🔐 Image Verification
+
+All images are signed with Sigstore. Once images are published, verify authenticity:
+
+```bash
+# Verify image signature (after successful build)
+cosign verify ghcr.io/duyhenryer/wolfi-images/node:latest \
+  --certificate-identity-regexp="https://github.com/duyhenryer/wolfi-images" \
+  --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
 ```

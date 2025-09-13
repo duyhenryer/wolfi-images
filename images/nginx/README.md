@@ -33,14 +33,23 @@
 ## 📊 Image Info
 
 ```bash
-# Check nginx version
-docker run --rm --entrypoint /usr/sbin/nginx ghcr.io/duyhenryer/wolfi-images/nginx:1.29 -v
+# Check if image is available
+docker manifest inspect ghcr.io/duyhenryer/wolfi-images/nginx:1.29
 
-# Test nginx configuration
-docker run --rm -v $(pwd)/nginx.conf:/etc/nginx/nginx.conf \
-  ghcr.io/duyhenryer/wolfi-images/nginx:1.29 nginx -t
+# Once available, check nginx version
+docker run --rm --entrypoint /usr/sbin/nginx ghcr.io/duyhenryer/wolfi-images/nginx:1.29 -v
 
 # Run nginx server
 docker run -d -p 8080:80 ghcr.io/duyhenryer/wolfi-images/nginx:1.29
 ```
 
+## 🔐 Image Verification
+
+All images are signed with Sigstore. Once images are published, verify authenticity:
+
+```bash
+# Verify image signature (after successful build)
+cosign verify ghcr.io/duyhenryer/wolfi-images/nginx:1.29 \
+  --certificate-identity-regexp="https://github.com/duyhenryer/wolfi-images" \
+  --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
+```

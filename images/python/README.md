@@ -30,12 +30,23 @@
 ## 📊 Image Info
 
 ```bash
-# Check Python version
+# Check if image is available
+docker manifest inspect ghcr.io/duyhenryer/wolfi-images/python:3.12
+
+# Once available, check Python version
 docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12 python --version
 
 # Check installed packages
 docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12-dev python -m pip list
+```
 
-# Image size
-docker images ghcr.io/duyhenryer/wolfi-images/python:3.12
+## 🔐 Image Verification
+
+All images are signed with Sigstore. Once images are published, verify authenticity:
+
+```bash
+# Verify image signature (after successful build)
+cosign verify ghcr.io/duyhenryer/wolfi-images/python:3.12 \
+  --certificate-identity-regexp="https://github.com/duyhenryer/wolfi-images" \
+  --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
 ```

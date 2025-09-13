@@ -1,7 +1,5 @@
 # 🐺 Wolfi Images Collection
 
-[![Build Status](https://github.com/duyhenryer/wolfi-images/workflows/CI/badge.svg)](https://github.com/duyhenryer/wolfi-images/actions)
-
 > Minimal, secure, and distroless container images built on [Wolfi OS](https://wolfi.dev) 🔒
 
 ## 🚀 Available Images
@@ -34,14 +32,4 @@ docker run --rm ghcr.io/duyhenryer/wolfi-images/node:latest node --version
 
 # Nginx example
 docker run -p 8080:80 ghcr.io/duyhenryer/wolfi-images/nginx:latest
-```
-
-## 🔐 Image Verification
-
-All images are signed with Sigstore. Verify authenticity:
-
-```bash
-cosign verify ghcr.io/duyhenryer/wolfi-images/python:latest \
-  --certificate-identity-regexp="https://github.com/duyhenryer/wolfi-images" \
-  --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
 ```
