@@ -90,7 +90,7 @@ jobs:
 
       - name: Publish image
         id: apko
-        uses: distroless/actions/apko-publish@v1.0.1
+        uses: distroless/actions/apko-publish@v1.0.2
         with:
           config: ${{ inputs.config-dir }}/${{ inputs.target }}.yaml
           tag: ${{ steps.vars.outputs.image }}
