@@ -55,13 +55,15 @@ jobs:
       registry: ${{ steps.vars.outputs.registry }}
       image: ${{ steps.vars.outputs.image }}
     steps:
-      - uses: imjasonh/setup-crane@v0.4
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 #v5
+
+      - uses: imjasonh/setup-crane@31b88efe9de28ae0ffa220711af4b60be9435f6e #v0.4
+
       - name: Install Cosign
-        uses: sigstore/cosign-installer@v3.10.0
+        uses: sigstore/cosign-installer@d7543c93d881b35a8faa02e8e3605f69b7a1ce62 #v3.10.0
         with:
           cosign-release: 'v2.5.3'
-      - name: Checkout
-        uses: actions/checkout@v5
 
       - name: Set Vars
         id: vars
@@ -76,7 +78,7 @@ jobs:
 
       - if: steps.vars.outputs.registry == 'ghcr.io'
         name: Login to GitHub Registry
-        uses: docker/login-action@v3
+        uses: docker/login-action@74a5d142397b4f367a81961eba4e8cd7edddf772 #v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -90,7 +92,7 @@ jobs:
 
       - name: Publish image
         id: apko
-        uses: distroless/actions/apko-publish@v1.0.2
+        uses: distroless/actions/apko-publish@6a83c8d22c10155d7bc0105615a01b0770134dfd #v1.0.2
         with:
           config: ${{ inputs.config-dir }}/${{ inputs.target }}.yaml
           tag: ${{ steps.vars.outputs.image }}
@@ -160,7 +162,7 @@ jobs:
 
       - if: steps.vars.outputs.registry == 'ghcr.io'
         name: Attest build provenance
-        uses: actions/attest-build-provenance@v3
+        uses: actions/attest-build-provenance@977bb373ede98d70efdf65b84cb5f73e068dcc2a #v3
         with:
           subject-name: ${{ steps.vars.outputs.registry }}/${{ inputs.repository }}
           subject-digest: ${{ steps.digest.outputs.digest }}
