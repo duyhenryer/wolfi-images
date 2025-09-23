@@ -1,0 +1,37 @@
+include: images/apko.yaml
+
+contents:
+  packages:
+    - aws-cli-v2
+    - bash
+    - busybox
+    - ca-certificates-bundle
+    - cosign
+    - crane
+    - curl
+    - docker-cli
+    - docker-cli-buildx
+    - docker-compose
+    - gettext
+    - git
+    - grype
+    - helm
+    - helm-docs
+    - jq
+    - k3d
+    - k9s
+    - kubectl
+    - openssh-client
+    - openssl
+    - opentofu
+    - py3-ansible-core
+    - terragrunt
+    - wolfi-baselayout
+    - yq
+
+cmd: /usr/bin/sh -l
+
+annotations:
+  org.opencontainers.image.title: 'Debugger'
+  org.opencontainers.image.description: 'Debugger image based on Wolfi OS'
+  org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/debugger'
