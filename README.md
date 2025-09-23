@@ -14,9 +14,9 @@
 
 ## ✨ Features
 
-- 🔒 **Security First**: Built on Wolfi OS with no known CVEs
+- 🔒 **Security First**: Built on Wolfi OS with minimal CVEs
 - 📦 **Minimal Size**: Distroless images with only essential components
-- 🚀 **Multi-Architecture**: Supports both `amd64` and `arm64`
+- 🏗️ **Multi-Architecture**: Supports both `amd64` and `arm64`
 - 🔐 **Signed Images**: All images are signed with Sigstore/Cosign
 - 📋 **SBOM Included**: Software Bill of Materials for transparency
 - 🔄 **Auto-Updated**: Automated builds with latest security patches

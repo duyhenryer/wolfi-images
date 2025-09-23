@@ -3,3 +3,4 @@ include: images/python/shell.yaml
 contents:
   packages:
     - python-3.12
+    - py3.12-pip

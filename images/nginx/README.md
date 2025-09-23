@@ -1,6 +1,6 @@
 # Nginx Image
 
-> High-performance HTTP server and reverse proxy built on Wolfi OS with zero known CVEs
+> High-performance HTTP server and reverse proxy built on Wolfi OS with minimal CVEs
 
 ## 🏷️ Available Tags
 

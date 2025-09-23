@@ -1,6 +1,6 @@
 # Node.js Image
 
-> Modern JavaScript runtime built on Wolfi OS with zero known CVEs
+> Modern JavaScript runtime built on Wolfi OS with minimal CVEs
 
 ## 🏷️ Available Tags
 
