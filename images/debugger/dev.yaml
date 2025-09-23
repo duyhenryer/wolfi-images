@@ -1,4 +1,4 @@
-include: images/infra-tools/prod.yaml
+include: images/debugger/prod.yaml
 
 contents:
   packages:
