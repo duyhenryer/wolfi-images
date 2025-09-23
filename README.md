@@ -25,7 +25,7 @@
 
 ```bash
 # Python version
-docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12 --version
+docker run --rm ghcr.io/duyhenryer/wolfi-images/python:latest --version
 
 # Node version  
 docker run --rm ghcr.io/duyhenryer/wolfi-images/node:latest --version

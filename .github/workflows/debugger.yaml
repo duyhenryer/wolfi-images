@@ -1,0 +1,39 @@
+name: debugger
+
+on:
+  schedule:
+    - cron: "00 01 * * 1"
+  pull_request:
+    paths:
+      - .github/workflows/debugger.yaml
+      - 'images/debugger/*.yaml'
+      - 'images/debugger/**/*.yaml'
+  push:
+    branches:
+      - 'main'
+    paths:
+      - .github/workflows/debugger.yaml
+      - 'images/debugger/*.yaml'
+      - 'images/debugger/**/*.yaml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+  attestations: write
+  id-token: write
+  security-events: write
+  actions: read
+
+jobs:
+  publish:
+    strategy:
+      matrix:
+        version: [latest]
+        variant: [prod, dev]
+    name: ${{ matrix.version }}${{ matrix.variant == 'dev' && '-dev' || '' }}
+    uses: './.github/workflows/release.yaml'
+    with:
+      tag: ${{ matrix.version }}${{ matrix.variant == 'dev' && '-dev' || '' }}
+      target: ${{ matrix.variant }}
+    secrets: inherit
