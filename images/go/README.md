@@ -1,6 +1,6 @@
 # Go Image
 
-> Fast and efficient Go runtime built on Wolfi OS with zero known CVEs
+> Fast and efficient Go runtime built on Wolfi OS with minimal CVEs
 
 ## 🏷️ Available Tags
 
