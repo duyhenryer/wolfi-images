@@ -32,6 +32,6 @@ contents:
 cmd: /usr/bin/sh -l
 
 annotations:
-  org.opencontainers.image.title: 'debugger'
-  org.opencontainers.image.description: 'debugger image based on Wolfi OS'
+  org.opencontainers.image.title: 'Debugger'
+  org.opencontainers.image.description: 'Debugger image based on Wolfi OS'
   org.opencontainers.image.source: 'https://github.com/GitGuardian/wolfi/tree/main/images/debugger'
