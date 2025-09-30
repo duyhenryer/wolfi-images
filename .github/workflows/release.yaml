@@ -78,7 +78,7 @@ jobs:
 
       - if: steps.vars.outputs.registry == 'ghcr.io'
         name: Login to GitHub Registry
-        uses: docker/login-action@184bdaa0721073962dff0199f1fb9940f07167d1 #v3
+        uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef #v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -92,7 +92,7 @@ jobs:
 
       - name: Publish image
         id: apko
-        uses: distroless/actions/apko-publish@61336735b5cd31d71eb2dfb39bc448e8a7ed7341 #v1.0.3
+        uses: distroless/actions/apko-publish@ca94ad0bfa5f31a0e8ba71ff2a7faa1751b9a427 #v1.0.4
         with:
           config: ${{ inputs.config-dir }}/${{ inputs.target }}.yaml
           tag: ${{ steps.vars.outputs.image }}
