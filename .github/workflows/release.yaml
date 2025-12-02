@@ -56,7 +56,7 @@ jobs:
       image: ${{ steps.vars.outputs.image }}
     steps:
       - name: Checkout
-        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd #v5
+        uses: actions/checkout@1af3b93b6815bc44a9784bd300feb67ff0d1eeb3 #v5
 
       - uses: imjasonh/setup-crane@31b88efe9de28ae0ffa220711af4b60be9435f6e #v0.4
 
@@ -92,7 +92,7 @@ jobs:
 
       - name: Publish image
         id: apko
-        uses: distroless/actions/apko-publish@9fc710c7faed46f22e51e4e0e057c8ac0caa0fb3 #v1.0.7
+        uses: distroless/actions/apko-publish@c79ffbad663f19941f339294e3f64fc832e473ec #v1.0.8
         with:
           config: ${{ inputs.config-dir }}/${{ inputs.target }}.yaml
           tag: ${{ steps.vars.outputs.image }}
