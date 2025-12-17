@@ -9,6 +9,9 @@
 | ghcr.io/duyhenryer/wolfi-images/go:latest            | latest       |
 | ghcr.io/duyhenryer/wolfi-images/go:latest-dev        | latest-dev   |
 | ghcr.io/duyhenryer/wolfi-images/go:latest-shell      | latest-shell |
+| ghcr.io/duyhenryer/wolfi-images/go:1.25              | 1.25         |
+| ghcr.io/duyhenryer/wolfi-images/go:1.25-dev          | 1.25-dev     |
+| ghcr.io/duyhenryer/wolfi-images/go:1.25-shell        | 1.25-shell   |
 | ghcr.io/duyhenryer/wolfi-images/go:1.24              | 1.24         |
 | ghcr.io/duyhenryer/wolfi-images/go:1.24-dev          | 1.24-dev     |
 | ghcr.io/duyhenryer/wolfi-images/go:1.24-shell        | 1.24-shell   |
