@@ -92,7 +92,7 @@ jobs:
 
       - name: Publish image
         id: apko
-        uses: distroless/actions/apko-publish@35a3b0668ec6ca1718736bd29432752aab58ca60 #v1.0.18
+        uses: distroless/actions/apko-publish@f109b5ffb5fa6d62ad11afde239271eb77376a39 #v1.0.19
         with:
           config: ${{ inputs.config-dir }}/${{ inputs.target }}.yaml
           tag: ${{ steps.vars.outputs.image }}
