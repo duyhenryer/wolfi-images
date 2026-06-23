@@ -6,8 +6,8 @@
 
 | ⬇️ Pull URL                                           | 📌 Version    |
 | ----------------------------------------------------- | ------------ |
-| ghcr.io/duyhenryer/wolfi-images/shell:latest         | latest       |
-| ghcr.io/duyhenryer/wolfi-images/shell:latest-dev     | latest-dev   |
+| ghcr.io/duynhlab/wolfi-images/shell:latest         | latest       |
+| ghcr.io/duynhlab/wolfi-images/shell:latest-dev     | latest-dev   |
 
 ## 📦 Variants
 
@@ -28,10 +28,10 @@
 
 ```bash
 # Check if image is available
-docker manifest inspect ghcr.io/duyhenryer/wolfi-images/shell:latest
+docker manifest inspect ghcr.io/duynhlab/wolfi-images/shell:latest
 
 # Once available, run interactive shell
-docker run --rm -it ghcr.io/duyhenryer/wolfi-images/shell:latest bash
+docker run --rm -it ghcr.io/duynhlab/wolfi-images/shell:latest bash
 ```
 
 ## 🔐 Image Verification
@@ -40,8 +40,8 @@ docker run --rm -it ghcr.io/duyhenryer/wolfi-images/shell:latest bash
 GitHub CLI (`gh`) can be used to retrieve the build provenance, which details the exact commit, workflow, and runner that produced the image:
 ```sh
 gh attestation verify \
-  --owner duyhenryer \
-  oci://ghcr.io/duyhenryer/wolfi-images/shell:latest-shell
+  --owner duynhlab \
+  oci://ghcr.io/duynhlab/wolfi-images/shell:latest-shell
 ```
 
 ✅ ***Verify the Image Signature***
@@ -50,7 +50,7 @@ All images are signed with `Sigstore`. Once images are published, verify authent
 
 ```bash
 # Verify image signature (after successful build)
-cosign verify ghcr.io/duyhenryer/wolfi-images/shell:latest \
-  --certificate-identity-regexp="https://github.com/duyhenryer/wolfi-images" \
+cosign verify ghcr.io/duynhlab/wolfi-images/shell:latest \
+  --certificate-identity-regexp="https://github.com/duynhlab/wolfi-images" \
   --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
 ```

@@ -24,4 +24,4 @@ archs:
 
 annotations:
   org.opencontainers.image.authors: 'Duy nè <hello@duyne.me>'
-  org.opencontainers.image.source: 'https://github.com/duyhenryer/wolfi-image'
+  org.opencontainers.image.source: 'https://github.com/duynhlab/wolfi-images'
