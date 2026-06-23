@@ -48,3 +48,34 @@ cosign verify ghcr.io/duynhlab/wolfi-images/python:3.12 \
   --certificate-identity-regexp="https://github.com/duynhlab/wolfi-images" \
   --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
 ```
+
+## 🛡️ Vulnerability Scanning
+
+Built on Wolfi OS to keep CVEs near zero. Scan any tag yourself with [Grype](https://github.com/anchore/grype):
+
+```bash
+# Full scan — list all CVEs
+grype ghcr.io/duynhlab/wolfi-images/python:latest
+
+# Pin to an immutable digest
+grype ghcr.io/duynhlab/wolfi-images/python@sha256:<digest>
+
+# JSON output (CI integration)
+grype ghcr.io/duynhlab/wolfi-images/python:latest -o json
+
+# Only vulnerabilities that have a fix available
+grype ghcr.io/duynhlab/wolfi-images/python:latest --only-fixed
+
+# Fail (non-zero exit) on high/critical — use as a CI/CD gate
+grype ghcr.io/duynhlab/wolfi-images/python:latest --fail-on high
+```
+
+Expected result for a freshly built image:
+
+```text
+ ✔ Scanned for vulnerabilities     [0 vulnerability matches]
+   └── by severity: 0 critical, 0 high, 0 medium, 0 low, 0 negligible
+No vulnerabilities found
+```
+
+> CI scans every published image automatically and uploads results to the repo's **Security → Code scanning** tab.

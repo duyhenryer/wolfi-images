@@ -115,6 +115,23 @@ jobs:
               echo "digest-arm64=''" >> $GITHUB_OUTPUT
           fi
 
+      - name: Scan image for vulnerabilities
+        if: inputs.scan == 'true'
+        id: scan
+        uses: anchore/scan-action@e1165082ffb1fe366ebaf02d8526e7c4989ea9d2 #v7.4.0
+        with:
+          image: ${{ steps.vars.outputs.registry }}/${{ inputs.repository }}@${{ steps.digest.outputs.digest }}
+          output-format: sarif
+          fail-build: false
+          severity-cutoff: medium
+
+      - name: Upload scan results to code scanning
+        if: inputs.scan == 'true' && steps.vars.outputs.registry == 'ghcr.io'
+        uses: github/codeql-action/upload-sarif@dd903d2e4f5405488e5ef1422510ee31c8b32357 #v3
+        with:
+          sarif_file: ${{ steps.scan.outputs.sarif }}
+          category: ${{ github.workflow }}-${{ inputs.tag }}
+
       - name: Sign image
         shell: bash
         env:
