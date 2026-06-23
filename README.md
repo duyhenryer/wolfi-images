@@ -6,11 +6,11 @@
 
 | 🏷️ Image Name | 📦 Pull Command |
 |---------------|----------------|
-| [**python**](./images/python/) | `docker pull ghcr.io/duyhenryer/wolfi-images/python` |
-| [**node**](./images/node/) | `docker pull ghcr.io/duyhenryer/wolfi-images/node` |
-| [**go**](./images/go/) | `docker pull ghcr.io/duyhenryer/wolfi-images/go` |
-| [**nginx**](./images/nginx/) | `docker pull ghcr.io/duyhenryer/wolfi-images/nginx` |
-| [**shell**](./images/shell/) | `docker pull ghcr.io/duyhenryer/wolfi-images/shell` |
+| [**python**](./images/python/) | `docker pull ghcr.io/duynhlab/wolfi-images/python` |
+| [**node**](./images/node/) | `docker pull ghcr.io/duynhlab/wolfi-images/node` |
+| [**go**](./images/go/) | `docker pull ghcr.io/duynhlab/wolfi-images/go` |
+| [**nginx**](./images/nginx/) | `docker pull ghcr.io/duynhlab/wolfi-images/nginx` |
+| [**shell**](./images/shell/) | `docker pull ghcr.io/duynhlab/wolfi-images/shell` |
 
 ## ✨ Features
 
@@ -25,14 +25,14 @@
 
 ```bash
 # Python version
-docker run --rm ghcr.io/duyhenryer/wolfi-images/python:latest --version
+docker run --rm ghcr.io/duynhlab/wolfi-images/python:latest --version
 
 # Node version  
-docker run --rm ghcr.io/duyhenryer/wolfi-images/node:latest --version
+docker run --rm ghcr.io/duynhlab/wolfi-images/node:latest --version
 
 # Nginx version
-docker run ghcr.io/duyhenryer/wolfi-images/nginx:latest -version
+docker run ghcr.io/duynhlab/wolfi-images/nginx:latest -version
 
 # Go version
-docker run ghcr.io/duyhenryer/wolfi-images/go:latest version
+docker run ghcr.io/duynhlab/wolfi-images/go:latest version
 ```

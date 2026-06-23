@@ -5,18 +5,18 @@
 ## 🏷️ Available Tags
 | ⬇️ Pull URL                                           | 📌 Version    |
 | ----------------------------------------------------- | ------------ |
-| ghcr.io/duyhenryer/wolfi-images/python:latest         | latest       |
-| ghcr.io/duyhenryer/wolfi-images/python:latest-shell   | latest-shell |
-| ghcr.io/duyhenryer/wolfi-images/python:latest-dev     | latest-dev   |
-| ghcr.io/duyhenryer/wolfi-images/python:3.13           | 3.13           |
-| ghcr.io/duyhenryer/wolfi-images/python:3.13-shell     | 3.13-shell     |
-| ghcr.io/duyhenryer/wolfi-images/python:3.13-dev       | 3.13-dev       |
-| ghcr.io/duyhenryer/wolfi-images/python:3.12           | 3.12           |
-| ghcr.io/duyhenryer/wolfi-images/python:3.12-shell     | 3.12-shell     |
-| ghcr.io/duyhenryer/wolfi-images/python:3.12-dev       | 3.12-dev       |
-| ghcr.io/duyhenryer/wolfi-images/python:3.11           | 3.11           |
-| ghcr.io/duyhenryer/wolfi-images/python:3.11-shell     | 3.11-shell     |
-| ghcr.io/duyhenryer/wolfi-images/python:3.11-dev       | 3.11-dev       |
+| ghcr.io/duynhlab/wolfi-images/python:latest         | latest       |
+| ghcr.io/duynhlab/wolfi-images/python:latest-shell   | latest-shell |
+| ghcr.io/duynhlab/wolfi-images/python:latest-dev     | latest-dev   |
+| ghcr.io/duynhlab/wolfi-images/python:3.13           | 3.13           |
+| ghcr.io/duynhlab/wolfi-images/python:3.13-shell     | 3.13-shell     |
+| ghcr.io/duynhlab/wolfi-images/python:3.13-dev       | 3.13-dev       |
+| ghcr.io/duynhlab/wolfi-images/python:3.12           | 3.12           |
+| ghcr.io/duynhlab/wolfi-images/python:3.12-shell     | 3.12-shell     |
+| ghcr.io/duynhlab/wolfi-images/python:3.12-dev       | 3.12-dev       |
+| ghcr.io/duynhlab/wolfi-images/python:3.11           | 3.11           |
+| ghcr.io/duynhlab/wolfi-images/python:3.11-shell     | 3.11-shell     |
+| ghcr.io/duynhlab/wolfi-images/python:3.11-dev       | 3.11-dev       |
 
 
 ## 📦 Variants
@@ -32,10 +32,10 @@
 
 ```bash
 # Check Python version
-docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12 --version
+docker run --rm ghcr.io/duynhlab/wolfi-images/python:3.12 --version
 
 # Check installed packages (dev variant)
-docker run --rm ghcr.io/duyhenryer/wolfi-images/python:3.12-dev -m pip list
+docker run --rm ghcr.io/duynhlab/wolfi-images/python:3.12-dev -m pip list
 ```
 
 ## 🔐 Image Verification
@@ -44,7 +44,7 @@ All images are signed with Sigstore. Once images are published, verify authentic
 
 ```bash
 # Verify image signature (after successful build)
-cosign verify ghcr.io/duyhenryer/wolfi-images/python:3.12 \
-  --certificate-identity-regexp="https://github.com/duyhenryer/wolfi-images" \
+cosign verify ghcr.io/duynhlab/wolfi-images/python:3.12 \
+  --certificate-identity-regexp="https://github.com/duynhlab/wolfi-images" \
   --certificate-oidc-issuer="https://token.actions.githubusercontent.com"
 ```

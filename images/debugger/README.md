@@ -6,8 +6,8 @@
 
 | 📌 Version  | ⬇️ Pull URL                                         |
 | ---------- | -------------------------------------------------- |
-| latest     | ghcr.io/duyhenryer/wolfi-images/debugger:latest       |
-| latest-dev | ghcr.io/duyhenryer/wolfi-images/debugger:latest-shell |
+| latest     | ghcr.io/duynhlab/wolfi-images/debugger:latest       |
+| latest-dev | ghcr.io/duynhlab/wolfi-images/debugger:latest-shell |
 
 ## 📦 Variants
 
@@ -24,14 +24,14 @@ GitHub CLI ([gh](https://cli.github.com/)) can be used to retrieve the build pro
 
 ```shell
 gh attestation verify \
-  --owner duyhenryer \
-  oci://ghcr.io/duyhenryer/wolfi-images/debugger:latest
+  --owner duynhlab \
+  oci://ghcr.io/duynhlab/wolfi-images/debugger:latest
 ```
 
 - **Shell image**
 
 ```shell
 gh attestation verify \
-  --owner duyhenryer \
-  oci://ghcr.io/duyhenryer/wolfi-images/debugger:latest-shell
+  --owner duynhlab \
+  oci://ghcr.io/duynhlab/wolfi-images/debugger:latest-shell
 ```
