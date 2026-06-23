@@ -1,0 +1,9 @@
+# Code owners for duynhlab/wolfi-images
+# Docs: https://docs.github.com/articles/about-code-owners
+# Each line maps a path pattern to its owner(s); the last matching pattern wins.
+
+# Default owner for everything in the repo
+*               @duynhlab
+
+# CI / release pipeline
+/.github/       @duynhlab
