@@ -23,19 +23,17 @@ jobs:
   publish:
     strategy:
       matrix:
-        version: [latest, "1.25", "1.24", "1.23", "1.22"]
+        version: [latest, "1.26", "1.25", "1.24"]
         variant: [prod, shell, dev]
         include:
           - version: latest
             packages: ''
+          - version: "1.26"
+            packages: 'go~1.26'
           - version: "1.25"
             packages: 'go~1.25'
           - version: "1.24"
             packages: 'go~1.24'
-          - version: "1.23"
-            packages: 'go~1.23'
-          - version: "1.22"
-            packages: 'go~1.22'
     name: ${{ matrix.version }}${{ matrix.variant == 'shell' && '-shell' || matrix.variant == 'dev' && '-dev' || '' }}
     uses: './.github/workflows/release.yaml'
     with:
