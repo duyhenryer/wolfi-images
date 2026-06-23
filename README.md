@@ -36,3 +36,13 @@ docker run ghcr.io/duynhlab/wolfi-images/nginx:latest -version
 # Go version
 docker run ghcr.io/duynhlab/wolfi-images/go:latest version
 ```
+
+## 🛡️ Vulnerability Scanning
+
+Every image is scanned in CI with [Grype](https://github.com/anchore/grype) and the results are uploaded to the repo's **Security → Code scanning** tab. Scan any image yourself:
+
+```bash
+grype ghcr.io/duynhlab/wolfi-images/python:latest
+```
+
+See each image's README for more scanning options (`--only-fixed`, `--fail-on`, JSON output, scan-by-digest).
