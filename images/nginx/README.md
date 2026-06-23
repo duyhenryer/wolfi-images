@@ -72,7 +72,7 @@ grype ghcr.io/duynhlab/wolfi-images/nginx:latest --only-fixed
 grype ghcr.io/duynhlab/wolfi-images/nginx:latest --fail-on high
 ```
 
-Expected result for a freshly built image:
+Example output for a clean image:
 
 ```text
  ✔ Scanned for vulnerabilities     [0 vulnerability matches]

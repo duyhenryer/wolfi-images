@@ -76,7 +76,7 @@ grype ghcr.io/duynhlab/wolfi-images/shell:latest --only-fixed
 grype ghcr.io/duynhlab/wolfi-images/shell:latest --fail-on high
 ```
 
-Expected result for a freshly built image:
+Example output for a clean image:
 
 ```text
  ✔ Scanned for vulnerabilities     [0 vulnerability matches]
