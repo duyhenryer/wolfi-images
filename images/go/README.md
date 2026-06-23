@@ -9,18 +9,15 @@
 | ghcr.io/duynhlab/wolfi-images/go:latest            | latest       |
 | ghcr.io/duynhlab/wolfi-images/go:latest-dev        | latest-dev   |
 | ghcr.io/duynhlab/wolfi-images/go:latest-shell      | latest-shell |
+| ghcr.io/duynhlab/wolfi-images/go:1.26              | 1.26         |
+| ghcr.io/duynhlab/wolfi-images/go:1.26-dev          | 1.26-dev     |
+| ghcr.io/duynhlab/wolfi-images/go:1.26-shell        | 1.26-shell   |
 | ghcr.io/duynhlab/wolfi-images/go:1.25              | 1.25         |
 | ghcr.io/duynhlab/wolfi-images/go:1.25-dev          | 1.25-dev     |
 | ghcr.io/duynhlab/wolfi-images/go:1.25-shell        | 1.25-shell   |
 | ghcr.io/duynhlab/wolfi-images/go:1.24              | 1.24         |
 | ghcr.io/duynhlab/wolfi-images/go:1.24-dev          | 1.24-dev     |
 | ghcr.io/duynhlab/wolfi-images/go:1.24-shell        | 1.24-shell   |
-| ghcr.io/duynhlab/wolfi-images/go:1.23              | 1.23         |
-| ghcr.io/duynhlab/wolfi-images/go:1.23-dev          | 1.23-dev     |
-| ghcr.io/duynhlab/wolfi-images/go:1.23-shell        | 1.23-shell   |
-| ghcr.io/duynhlab/wolfi-images/go:1.22              | 1.22         |
-| ghcr.io/duynhlab/wolfi-images/go:1.22-dev          | 1.22-dev     |
-| ghcr.io/duynhlab/wolfi-images/go:1.22-shell        | 1.22-shell   |
 
 ## 📦 Variants
 
