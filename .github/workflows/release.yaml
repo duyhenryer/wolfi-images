@@ -179,8 +179,11 @@ jobs:
 
       - if: steps.vars.outputs.registry == 'ghcr.io'
         name: Attest build provenance
-        uses: actions/attest-build-provenance@a2bbfa25375fe432b6a289bc6b6cd05ecd0c4c32 #v3
+        uses: actions/attest-build-provenance@a2bbfa25375fe432b6a289bc6b6cd05ecd0c4c32 #v4.1.0
         with:
           subject-name: ${{ steps.vars.outputs.registry }}/${{ inputs.repository }}
           subject-digest: ${{ steps.digest.outputs.digest }}
           push-to-registry: true
+          # Storage records can only be created for org-owned repos; this is a
+          # user-owned repo, so disable to avoid a "no artifacts found" warning.
+          create-storage-record: false
