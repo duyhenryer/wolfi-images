@@ -3,7 +3,7 @@
 # Each line maps a path pattern to its owner(s); the last matching pattern wins.
 
 # Default owner for everything in the repo
-*               @duynhlab
+*               @duynhne @duyhenryer
 
 # CI / release pipeline
-/.github/       @duynhlab
+/.github/       @duynhne @duyhenryer
